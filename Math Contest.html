@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mathematics Contest 2026 — Parent Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Pulled from the flyer */
+    --blue-900:#0E3F73;
+    --blue-800:#1257A0;
+    --blue-700:#1B6FBF;
+    --blue-600:#2589DA;
+    --blue-500:#3DA0EA;
+    --blue-100:#D6EBFA;
+    --blue-050:#EBF5FC;
+    --orange:#F47B2A;
+    --orange-600:#E0681A;
+    --orange-050:#FFE9D2;
+    --yellow:#F4C842;
+    --red:#E63946;
+    --ink:#0B2545;
+    --ink-2:#3B4A5E;
+    --line:#CFE0F2;
+    --line-2:#E8F1F9;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--blue-050);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(244,123,42,.22), transparent 60%),
+      linear-gradient(180deg,var(--blue-600) 0%, var(--blue-800) 100%);
+    color:white;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:80px;
+    background:var(--blue-050);
+    clip-path:polygon(0 60%, 18% 30%, 38% 65%, 60% 25%, 80% 60%, 100% 35%, 100% 100%, 0 100%);
+    opacity:1;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 0;
+    position:relative;z-index:2;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    font-weight:700;letter-spacing:.02em;
+  }
+  .brand .dot{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(135deg,var(--orange) 0%, var(--yellow) 100%);
+    display:grid;place-items:center;color:white;font-weight:800;
+    box-shadow:0 6px 18px rgba(244,123,42,.4);
+  }
+  .nav-cta{
+    background:linear-gradient(90deg,var(--orange) 0%, var(--yellow) 100%);
+    color:white;text-decoration:none;
+    padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;
+    box-shadow:0 8px 24px rgba(244,123,42,.4);
+  }
+  .nav-cta:hover{filter:brightness(1.05)}
+
+  .hero-body{
+    position:relative;z-index:2;
+    padding:48px 0 110px;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,.12);
+    font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.18);
+  }
+  .eyebrow b{color:var(--orange);font-weight:700}
+  h1.headline{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:64px;line-height:1.04;
+    letter-spacing:-.02em;
+    margin:18px 0 14px;
+  }
+  h1.headline em{
+    font-style:italic;color:var(--yellow);font-weight:500;
+  }
+  .lede{
+    font-size:18px;color:#D6EBFA;max-width:46ch;margin:0 0 28px;
+  }
+  .facts{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+    max-width:520px;
+  }
+  .fact{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:14px 16px;
+  }
+  .fact .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A8CBE9;font-weight:700}
+  .fact .v{font-weight:700;font-size:18px;margin-top:4px}
+  .fact .v small{font-weight:500;color:#D6EBFA;font-size:13px;display:block;margin-top:2px}
+
+  /* Hero side card */
+  .stat-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:22px;
+    padding:26px;
+    backdrop-filter:blur(8px);
+  }
+  .stat-card h3{
+    margin:0 0 6px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--yellow);font-weight:700;
+  }
+  .stat-card p{margin:0 0 18px;color:#D6EBFA;font-size:14px}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}
+  .stat-grid .n{
+    font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1;color:white;
+  }
+  .stat-grid .l{font-size:12px;color:#A8CBE9;margin-top:6px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+
+  /* ============ GRADE PICKER ============ */
+  .section{padding:64px 0}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+  .section-title{
+    font-family:'Fraunces',serif;font-weight:600;font-size:36px;letter-spacing:-.01em;margin:0;
+  }
+  .section-sub{color:var(--ink-2);font-size:15px;margin:6px 0 0;max-width:60ch}
+
+  .grades{
+    display:grid;grid-template-columns:repeat(8,1fr);gap:10px;
+    margin-bottom:32px;
+  }
+  .grade-btn{
+    appearance:none;border:1px solid var(--line);background:white;
+    border-radius:14px;padding:14px 8px 12px;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+    font-family:inherit;color:var(--ink);
+    transition:all .15s ease;
+    position:relative;
+  }
+  .grade-btn .lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:700}
+  .grade-btn .num{
+    font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1;
+  }
+  .grade-btn:hover{border-color:var(--blue-500);transform:translateY(-1px)}
+  .grade-btn[aria-selected="true"]{
+    background:var(--blue-600);border-color:var(--blue-600);color:white;
+    box-shadow:0 12px 30px -12px rgba(37,137,218,.6);
+  }
+  .grade-btn[aria-selected="true"] .lab{color:#D6EBFA}
+  .grade-btn[aria-selected="true"]::after{
+    content:"";position:absolute;left:50%;transform:translateX(-50%);
+    bottom:-10px;width:14px;height:14px;background:var(--blue-600);
+    rotate:45deg;border-radius:2px;
+  }
+
+  /* ============ GRADE PANEL ============ */
+  .panel{
+    background:white;border:1px solid var(--line-2);border-radius:24px;
+    padding:36px;
+    box-shadow:0 30px 60px -40px rgba(15,42,74,.25);
+  }
+  .panel-head{
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+    padding-bottom:24px;border-bottom:1px solid var(--line-2);margin-bottom:28px;
+  }
+  .grade-tag{
+    display:inline-block;background:var(--orange);color:white;
+    font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:10px;
+  }
+  .grade-title{
+    font-family:'Fraunces',serif;font-weight:600;font-size:34px;
+    margin:0;letter-spacing:-.01em;line-height:1.15;
+  }
+  .grade-overview{color:var(--ink-2);font-size:16px;margin:10px 0 0;max-width:62ch}
+
+  .format-pill{
+    display:flex;flex-direction:column;align-items:flex-end;gap:6px;
+    background:var(--blue-050);border:1px solid var(--line);
+    border-radius:18px;padding:18px 22px;min-width:200px;
+  }
+  .format-pill .row{display:flex;align-items:baseline;gap:8px}
+  .format-pill .big{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--blue-700);line-height:1}
+  .format-pill .small{font-size:13px;color:var(--ink-2);font-weight:600}
+  .format-pill .fmt{font-size:12px;color:var(--ink-2);text-align:right;max-width:200px}
+
+  .grid-2{display:grid;grid-template-columns:1.2fr 1fr;gap:36px}
+
+  .card-h{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--blue-800);font-weight:800;margin:0 0 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .card-h::before{
+    content:"";width:18px;height:2px;background:var(--orange);border-radius:2px;
+  }
+
+  .topics{
+    display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;padding:0;list-style:none;
+  }
+  .topics li{
+    background:var(--blue-050);
+    border:1px solid var(--line);
+    color:var(--blue-800);
+    padding:8px 14px;border-radius:999px;
+    font-size:14px;font-weight:600;
+  }
+  .topics li:nth-child(3n+2){
+    background:var(--orange-050);color:var(--orange-600);border-color:#F8C9A0;
+  }
+
+  .tips{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .tips li{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;
+    align-items:start;
+    background:#FAFCFE;border:1px solid var(--line-2);border-radius:14px;
+    padding:14px 16px;
+  }
+  .tips .bullet{
+    width:26px;height:26px;border-radius:8px;background:var(--orange-050);
+    color:var(--orange-600);display:grid;place-items:center;
+    font-family:'Fraunces',serif;font-weight:600;font-size:14px;flex:0 0 auto;
+  }
+  .tips .txt{font-size:14.5px;color:var(--ink);line-height:1.5}
+
+  .not-tested{
+    margin-top:24px;
+    background:var(--blue-050);
+    border:1px dashed var(--blue-500);
+    border-radius:14px;padding:14px 18px;
+    display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  }
+  .not-tested .nt-lab{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-700);font-weight:800;
+  }
+  .not-tested .nt-txt{font-size:14px;color:var(--ink-2);margin-top:4px}
+  .not-tested .nt-icon{
+    width:32px;height:32px;border-radius:10px;background:white;border:1px solid var(--line);
+    color:var(--blue-700);display:grid;place-items:center;font-weight:800;
+  }
+
+  /* ============ RULES STRIP ============ */
+  .rules{
+    background:white;border:1px solid var(--line-2);border-radius:24px;
+    padding:28px 32px;margin-top:32px;
+  }
+  .rules-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .rule .k{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-2);font-weight:700;
+  }
+  .rule .v{
+    font-weight:700;font-size:16px;margin-top:6px;color:var(--ink);
+  }
+  .rule .v small{display:block;font-weight:500;color:var(--ink-2);font-size:13px;margin-top:3px}
+
+  footer{
+    padding:24px 0 48px;text-align:center;color:var(--ink-2);font-size:13px;
+  }
+  footer .sep{margin:0 8px;color:var(--line)}
+
+  /* fade in */
+  .panel-body{animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  @media (max-width:900px){
+    .hero-body{grid-template-columns:1fr;padding-bottom:80px}
+    h1.headline{font-size:44px}
+    .grades{grid-template-columns:repeat(4,1fr)}
+    .panel-head{grid-template-columns:1fr}
+    .format-pill{align-items:flex-start;align-self:start}
+    .grid-2{grid-template-columns:1fr;gap:28px}
+    .rules-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .grades{grid-template-columns:repeat(4,1fr)}
+    .facts{grid-template-columns:1fr}
+    h1.headline{font-size:36px}
+    .panel{padding:24px}
+    .section-title{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="dot">∑</div>
+        <span>Math Contest&nbsp;<span style="opacity:.7;font-weight:500">/ Parents</span></span>
+      </div>
+      <a class="nav-cta" href="#register">Register&nbsp;→</a>
+    </div>
+
+    <div class="hero-body">
+      <div>
+        <span class="eyebrow">Spring 2026 &nbsp;·&nbsp; <b>$10 entry</b></span>
+        <h1 class="headline">A friendly contest for <em>curious young mathematicians.</em></h1>
+        <p class="lede">A single 30‑minute paper‑based contest for Grades 1–8, run on one Saturday across all of our centers. Pick your child's grade below to see what to expect.</p>
+
+        <div class="facts">
+          <div class="fact">
+            <div class="k">Date</div>
+            <div class="v">Sat, May 24, 2026<small>One day, all centers</small></div>
+          </div>
+          <div class="fact">
+            <div class="k">Sessions</div>
+            <div class="v">11&nbsp;AM &nbsp;·&nbsp; 12&nbsp;PM<small>Pick one when you register</small></div>
+          </div>
+          <div class="fact">
+            <div class="k">Eligibility</div>
+            <div class="v">Grades 1 – 8<small>Open to all students</small></div>
+          </div>
+          <div class="fact">
+            <div class="k">Entry</div>
+            <div class="v">$10 per child<small>Includes participation award</small></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="stat-card">
+        <h3>At a glance</h3>
+        <p>One Saturday. One contest. One community of young problem‑solvers.</p>
+        <div class="stat-grid">
+          <div><div class="n">2</div><div class="l">Countries</div></div>
+          <div><div class="n">9</div><div class="l">School boards</div></div>
+          <div><div class="n">15</div><div class="l">Centers</div></div>
+          <div><div class="n">1000+</div><div class="l">Participants</div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="grades">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Select your child's grade</h2>
+        <p class="section-sub">Each grade has its own paper, designed to match what's age‑appropriate. The format below gives you a high‑level idea of what to expect on contest day.</p>
+      </div>
+    </div>
+
+    <div class="grades" role="tablist" aria-label="Grade selector">
+      <!-- buttons injected by JS -->
+    </div>
+
+    <div class="panel" id="panel">
+      <!-- panel content injected by JS -->
+    </div>
+
+    <!-- Rules common to all grades -->
+    <div class="rules">
+      <div class="rules-grid">
+        <div class="rule">
+          <div class="k">Duration</div>
+          <div class="v">30 minutes<small>Same for every grade</small></div>
+        </div>
+        <div class="rule">
+          <div class="k">Materials</div>
+          <div class="v">Provided on the day<small>Two blank sheets for working</small></div>
+        </div>
+        <div class="rule">
+          <div class="k">Skipping</div>
+          <div class="v">No penalty<small>Move on, come back later</small></div>
+        </div>
+        <div class="rule">
+          <div class="k">Devices</div>
+          <div class="v">Not permitted<small>No calculators or phones</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Mathematics Contest 2026</span>
+  <span class="sep">·</span>
+  <span>For parents &amp; guardians</span>
+  <span class="sep">·</span>
+  <span>Questions? Contact your local center.</span>
+</footer>
+
+<script>
+const GRADES = [
+  {
+    n: 1,
+    title: "First steps in mathematical thinking",
+    overview: "A gentle, encouraging first experience with timed math. Questions use everyday objects and familiar scenarios. A great way for younger children to feel proud of what they already know.",
+    questions: 40,
+    format: "Multiple choice (4 options)",
+    topics: ["Addition & subtraction", "Place value & number sense", "Shapes", "Money & time", "Patterns", "Comparison & simple logic"],
+    tips: [
+      "Practise counting by 2s, 5s, and 10s up to 100.",
+      "Review coin values and simple combinations.",
+      "A few short timed drills can help build confidence.",
+      "Remind your child it's okay to skip a tricky question and come back."
+    ],
+    notTested: "No calculators or reference materials. No multiplication or division beyond simple doubling."
+  },
+  {
+    n: 2,
+    title: "Building speed and multi‑step reasoning",
+    overview: "Larger numbers, multi‑step problems, and an introduction to multiplication thinking. Children who know their basic facts fluently will have a real advantage on the clock.",
+    questions: 40,
+    format: "Multiple choice (4 options)",
+    topics: ["Place value to 1000", "Addition & subtraction", "Early multiplication", "Money, time & calendar", "Geometry & patterns", "Logic & word problems"],
+    tips: [
+      "Build fluency with addition and subtraction facts up to 100.",
+      "Practise unit conversions — minutes in an hour, months in a year.",
+      "Work through word problems together; underline what's being asked.",
+      "Many errors come from misreading rather than miscalculating."
+    ],
+    notTested: "No long division. No fractions or decimals. No formal algebraic notation."
+  },
+  {
+    n: 3,
+    title: "Reasoning, rates, and shape thinking",
+    overview: "Questions reward careful reading and logical thinking, not just quick calculation. Expect rate problems, basic spatial reasoning, and a few multi‑step puzzles.",
+    questions: 40,
+    format: "Multiple choice (4 options)",
+    topics: ["Custom rules & operations", "Algebra with shapes", "Geometry & area", "Rates & time", "Ordering & logic", "Patterns & simple fractions"],
+    tips: [
+      "Practise reading a rule carefully and applying it step by step.",
+      "Try simple 'who is first / last in line' style logic puzzles.",
+      "Review perimeter and area of rectangles and triangles.",
+      "Encourage writing intermediate steps — fewer mental‑math slips."
+    ],
+    notTested: "No negative numbers. No formal fractions beyond simple halves and thirds."
+  },
+  {
+    n: 4,
+    title: "Fractions, ratios, and multi‑concept problems",
+    overview: "Arithmetic fluency meets conceptual thinking. Students encounter fractions, basic ratios, unit conversions, and problems that combine several ideas at once.",
+    questions: 40,
+    format: "Mix of multiple choice and short open response",
+    topics: ["Fractions & decimals", "Factors & multiples", "Perimeter & area", "Working‑backwards algebra", "Ratio & proportion", "Time, rates & averages"],
+    tips: [
+      "Solidify fraction skills — multiplying and finding equivalents.",
+      "Practise perimeter and area, especially with combined shapes.",
+      "Work through 'undo the steps' problems to build backwards thinking.",
+      "Review common unit conversions: cm ↔ m, minutes ↔ hours."
+    ],
+    notTested: "No negative numbers. No algebraic variables. No trigonometry or formal proof."
+  },
+  {
+    n: 5,
+    title: "Percentages, geometry, and abstract reasoning",
+    overview: "The first level where percentages, custom operations, and combinatorics appear together. A handful of open‑response questions ask for a written answer rather than a choice.",
+    questions: 40,
+    format: "Mostly multiple choice · 3 short open‑response",
+    topics: ["Percentages & discounts", "Fractions & equivalence", "Ratios & proportions", "Perimeter & area", "Number theory basics", "Angles & directions", "Averages & counting"],
+    tips: [
+      "Be comfortable with percentages and successive discounts.",
+      "Practise adding fractions with unlike denominators.",
+      "Try compass/clock rotation problems — sketching helps.",
+      "For open‑response, write workings clearly on the scratch sheet."
+    ],
+    notTested: "No negative numbers. No simultaneous equations with variables."
+  },
+  {
+    n: 6,
+    title: "Number theory, algebra foundations, and geometry",
+    overview: "A broad curriculum: primes and divisibility, decimal and fraction fluency, and geometry through symmetry and angles. Students are expected to work systematically and check their answers.",
+    questions: 40,
+    format: "Multiple choice (4 options)",
+    topics: ["Numbers & operations", "Integers & primes", "Fractions & decimals", "Ratio & proportion", "Angles & shapes", "Symmetry & early algebra"],
+    tips: [
+      "Review divisibility rules for 2, 3, 4, 5, 6, 9 and 10.",
+      "Practise subtracting mixed numbers with regrouping.",
+      "Know the difference between rotational symmetry and lines of symmetry.",
+      "For angle questions, sketch the turn — it's almost always faster."
+    ],
+    notTested: "No algebraic variables (x, y) yet. No coordinate geometry or trigonometry."
+  },
+  {
+    n: 7,
+    title: "Rational numbers, probability, and coordinate geometry",
+    overview: "A real step up in abstraction. Negative rationals, multi‑step fraction expressions, probability, basic statistics, and angle theorems. Problems typically take three or more steps to solve.",
+    questions: 40,
+    format: "Multiple choice (4 options)",
+    topics: ["Integers & rational numbers", "Percentages & fractions", "Statistics & probability", "Angles & triangles", "Patterns & logic", "Coordinate geometry basics"],
+    tips: [
+      "Be fluent with negative number operations — especially with fractions.",
+      "Memorise the exterior angle theorem; it appears often.",
+      "Practise probability of 'not' events: P(not A) = 1 − P(A).",
+      "Know the triangle inequality."
+    ],
+    notTested: "No quadratic equations. No formal proof. No trigonometry."
+  },
+  {
+    n: 8,
+    title: "Advanced number theory, speed, and higher geometry",
+    overview: "The most demanding level in the series. Multi‑variable systems, formal number theory, complex geometry, and work / speed problems. Many problems reward students who can choose the right strategy quickly.",
+    questions: "38–40",
+    format: "Multiple choice · occasional open response",
+    topics: ["Number theory & digits", "Triangles & angle geometry", "Circle, square & ratio geometry", "Ratios & percentages", "Work, pipes & speed", "Averages & counting", "Mixed algebra"],
+    tips: [
+      "Be very comfortable with prime factorisation, HCF and LCM.",
+      "Practise the exterior angle theorem and triangle inequality.",
+      "For work/pipe problems, convert each rate to a fraction per minute first.",
+      "Time management matters most here — if a problem is stuck after ~90 seconds, skip and return."
+    ],
+    notTested: "No calculus. No formal proof required. No statistics beyond mean and basic probability."
+  }
+];
+
+const gradesEl = document.querySelector('.grades');
+const panel = document.getElementById('panel');
+let active = 1;
+
+function renderTabs(){
+  gradesEl.innerHTML = GRADES.map(g => `
+    <button class="grade-btn" role="tab" aria-selected="${g.n===active}" data-grade="${g.n}">
+      <span class="lab">Grade</span>
+      <span class="num">${g.n}</span>
+    </button>
+  `).join('');
+  gradesEl.querySelectorAll('.grade-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      active = Number(btn.dataset.grade);
+      renderTabs();
+      renderPanel();
+    });
+  });
+}
+
+function renderPanel(){
+  const g = GRADES.find(x => x.n === active);
+  panel.innerHTML = `
+    <div class="panel-body">
+      <div class="panel-head">
+        <div>
+          <span class="grade-tag">Grade ${g.n}</span>
+          <h3 class="grade-title">${g.title}</h3>
+          <p class="grade-overview">${g.overview}</p>
+        </div>
+        <div class="format-pill">
+          <div class="row"><span class="big">${g.questions}</span><span class="small">questions</span></div>
+          <div class="row"><span class="big">30</span><span class="small">minutes</span></div>
+          <div class="fmt">${g.format}</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h4 class="card-h">What's covered</h4>
+          <ul class="topics">
+            ${g.topics.map(t => `<li>${t}</li>`).join('')}
+          </ul>
+        </div>
+        <div>
+          <h4 class="card-h">How to help at home</h4>
+          <ul class="tips">
+            ${g.tips.map((t,i) => `<li><span class="bullet">${i+1}</span><span class="txt">${t}</span></li>`).join('')}
+          </ul>
+        </div>
+      </div>
+
+      <div class="not-tested">
+        <div class="nt-icon">✕</div>
+        <div>
+          <div class="nt-lab">Not tested at this grade</div>
+          <div class="nt-txt">${g.notTested}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+renderTabs();
+renderPanel();
+</script>
+</body>
+</html>
