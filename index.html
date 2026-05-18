@@ -346,7 +346,7 @@
       <div>
         <span class="eyebrow">Spring 2026 &nbsp;·&nbsp; <b>$10 entry</b></span>
         <h1 class="headline">A friendly contest for <em>curious young mathematicians.</em></h1>
-        <p class="lede">A single 30‑minute paper‑based contest for Grades 1–8, run on one Saturday across all of our centers. Pick your child's grade below to see what to expect.</p>
+        <p class="lede">A single 30‑minute paper‑based contest for Grades 1–8, run on one Sunday across all of our centers. Pick your child's grade below to see what to expect.</p>
 
         <div class="facts">
           <div class="fact">
@@ -359,14 +359,14 @@
           </div>
           <div class="fact">
             <div class="k">Entry</div>
-            <div class="v">$10 per child<small>Includes participation award</small></div>
+            <div class="v">$10 per child</div>
           </div>
         </div>
       </div>
 
       <aside class="stat-card">
         <h3>At a glance</h3>
-        <p>One Saturday. One contest. One community of young problem‑solvers.</p>
+        <p>One Sunday. One contest. One community of young problem‑solvers.</p>
         <div class="stat-grid">
           <div><div class="n">2</div><div class="l">Countries</div></div>
           <div><div class="n">9</div><div class="l">School boards</div></div>
@@ -409,7 +409,7 @@
         </div>
         <div class="rule">
           <div class="k">Skipping</div>
-          <div class="v">No penalty<small>Move on, come back later</small></div>
+          <div class="v">No penalty</div>
         </div>
         <div class="rule">
           <div class="k">Devices</div>
@@ -448,13 +448,6 @@ const GRADES = [
     questions: 40,
     format: "Multiple choice (4 options)",
     topics: ["Addition & subtraction", "Place value & number sense", "Shapes", "Money & time", "Patterns", "Comparison & simple logic"],
-    tips: [
-      "Practise counting by 2s, 5s, and 10s up to 100.",
-      "Review coin values and simple combinations.",
-      "A few short timed drills can help build confidence.",
-      "Remind your child it's okay to skip a tricky question and come back."
-    ],
-    notTested: "No calculators or reference materials. No multiplication or division beyond simple doubling."
   },
   {
     n: 2,
@@ -463,13 +456,6 @@ const GRADES = [
     questions: 40,
     format: "Multiple choice (4 options)",
     topics: ["Place value to 1000", "Addition & subtraction", "Early multiplication", "Money, time & calendar", "Geometry & patterns", "Logic & word problems"],
-    tips: [
-      "Build fluency with addition and subtraction facts up to 100.",
-      "Practise unit conversions — minutes in an hour, months in a year.",
-      "Work through word problems together; underline what's being asked.",
-      "Many errors come from misreading rather than miscalculating."
-    ],
-    notTested: "No long division. No fractions or decimals. No formal algebraic notation."
   },
   {
     n: 3,
@@ -478,13 +464,6 @@ const GRADES = [
     questions: 40,
     format: "Multiple choice (4 options)",
     topics: ["Custom rules & operations", "Algebra with shapes", "Geometry & area", "Rates & time", "Ordering & logic", "Patterns & simple fractions"],
-    tips: [
-      "Practise reading a rule carefully and applying it step by step.",
-      "Try simple 'who is first / last in line' style logic puzzles.",
-      "Review perimeter and area of rectangles and triangles.",
-      "Encourage writing intermediate steps — fewer mental‑math slips."
-    ],
-    notTested: "No negative numbers. No formal fractions beyond simple halves and thirds."
   },
   {
     n: 4,
@@ -493,13 +472,6 @@ const GRADES = [
     questions: 40,
     format: "Mix of multiple choice and short open response",
     topics: ["Fractions & decimals", "Factors & multiples", "Perimeter & area", "Working‑backwards algebra", "Ratio & proportion", "Time, rates & averages"],
-    tips: [
-      "Solidify fraction skills — multiplying and finding equivalents.",
-      "Practise perimeter and area, especially with combined shapes.",
-      "Work through 'undo the steps' problems to build backwards thinking.",
-      "Review common unit conversions: cm ↔ m, minutes ↔ hours."
-    ],
-    notTested: "No negative numbers. No algebraic variables. No trigonometry or formal proof."
   },
   {
     n: 5,
@@ -508,13 +480,6 @@ const GRADES = [
     questions: 40,
     format: "Mostly multiple choice · 3 short open‑response",
     topics: ["Percentages & discounts", "Fractions & equivalence", "Ratios & proportions", "Perimeter & area", "Number theory basics", "Angles & directions", "Averages & counting"],
-    tips: [
-      "Be comfortable with percentages and successive discounts.",
-      "Practise adding fractions with unlike denominators.",
-      "Try compass/clock rotation problems — sketching helps.",
-      "For open‑response, write workings clearly on the scratch sheet."
-    ],
-    notTested: "No negative numbers. No simultaneous equations with variables."
   },
   {
     n: 6,
@@ -523,13 +488,6 @@ const GRADES = [
     questions: 40,
     format: "Multiple choice (4 options)",
     topics: ["Numbers & operations", "Integers & primes", "Fractions & decimals", "Ratio & proportion", "Angles & shapes", "Symmetry & early algebra"],
-    tips: [
-      "Review divisibility rules for 2, 3, 4, 5, 6, 9 and 10.",
-      "Practise subtracting mixed numbers with regrouping.",
-      "Know the difference between rotational symmetry and lines of symmetry.",
-      "For angle questions, sketch the turn — it's almost always faster."
-    ],
-    notTested: "No algebraic variables (x, y) yet. No coordinate geometry or trigonometry."
   },
   {
     n: 7,
@@ -538,13 +496,6 @@ const GRADES = [
     questions: 40,
     format: "Multiple choice (4 options)",
     topics: ["Integers & rational numbers", "Percentages & fractions", "Statistics & probability", "Angles & triangles", "Patterns & logic", "Coordinate geometry basics"],
-    tips: [
-      "Be fluent with negative number operations — especially with fractions.",
-      "Memorise the exterior angle theorem; it appears often.",
-      "Practise probability of 'not' events: P(not A) = 1 − P(A).",
-      "Know the triangle inequality."
-    ],
-    notTested: "No quadratic equations. No formal proof. No trigonometry."
   },
   {
     n: 8,
@@ -553,13 +504,6 @@ const GRADES = [
     questions: "38–40",
     format: "Multiple choice · occasional open response",
     topics: ["Number theory & digits", "Triangles & angle geometry", "Circle, square & ratio geometry", "Ratios & percentages", "Work, pipes & speed", "Averages & counting", "Mixed algebra"],
-    tips: [
-      "Be very comfortable with prime factorisation, HCF and LCM.",
-      "Practise the exterior angle theorem and triangle inequality.",
-      "For work/pipe problems, convert each rate to a fraction per minute first.",
-      "Time management matters most here — if a problem is stuck after ~90 seconds, skip and return."
-    ],
-    notTested: "No calculus. No formal proof required. No statistics beyond mean and basic probability."
   }
 ];
 
@@ -600,27 +544,11 @@ function renderPanel(){
         </div>
       </div>
 
-      <div class="grid-2">
-        <div>
-          <h4 class="card-h">What's covered</h4>
-          <ul class="topics">
-            ${g.topics.map(t => `<li>${t}</li>`).join('')}
-          </ul>
-        </div>
-        <div>
-          <h4 class="card-h">How to help at home</h4>
-          <ul class="tips">
-            ${g.tips.map((t,i) => `<li><span class="bullet">${i+1}</span><span class="txt">${t}</span></li>`).join('')}
-          </ul>
-        </div>
-      </div>
-
-      <div class="not-tested">
-        <div class="nt-icon">✕</div>
-        <div>
-          <div class="nt-lab">Not tested at this grade</div>
-          <div class="nt-txt">${g.notTested}</div>
-        </div>
+      <div>
+        <h4 class="card-h">What's covered</h4>
+        <ul class="topics">
+          ${g.topics.map(t => `<li>${t}</li>`).join('')}
+        </ul>
       </div>
     </div>
   `;
